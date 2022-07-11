@@ -10,32 +10,51 @@
 
 [data-tt] {
 	position: relative;
-
 	--_scale: 0;
 }
 
 [data-tt]:not([data-tt-pos]),
-[data-tt-pos*="bottom"] {
+[data-tt-pos="bottom"] {
 	--_top: calc(100% + var(--tt-offet));
 	--_left: 50%;
+	--_tx: -50%;
 	--_origin: top;
 }
 
-[data-tt-pos*="top"] {
+[data-tt-pos="top"] {
 	--_bottom: calc(100% + var(--tt-offet));
 	--_left: 50%;
+	--_tx: -50%;
 	--_origin: bottom;
+}
+
+[data-tt-pos="left"] {
+	--_right: calc(100% + var(--tt-offet));
+	--_top: 50%;
+	--_ty: -50%;
+	--_origin: right;
+}
+
+[data-tt-pos="right"] {
+	--_left: calc(100% + var(--tt-offet));
+	--_top: 50%;
+	--_ty: -50%;
+	--_origin: left;
 }
 
 [data-tt]::after {
 	content: attr(data-tt);
 
+	z-index: 10;
+
 	position: absolute;
 	top: var(--_top, initial);
 	bottom: var(--_bottom, initial);
 	left: var(--_left, initial);
+	right: var(--_right, initial);
 
-	transform: translateX(-50%) scale(var(--_scale, 1));
+	transform: translate(var(--_tx, 0px), var(--_ty, 0px))
+		scale(var(--_scale, 1));
 	transform-origin: var(--_origin);
 
 	transition: transform;

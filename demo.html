@@ -17,6 +17,12 @@
 				place-items: center;
 			}
 
+			.container {
+				display: flex;
+				flex-direction: column;
+				gap: 2rem;
+			}
+
 			button {
 				font-size: 50px;
 				padding: 0.2em;
@@ -25,11 +31,14 @@
 		</style>
 	</head>
 	<body>
-		<div>
-			<button data-tt="This is a tooltip">With Tooltip</button>
-			<button data-tt="This is a tooltip" data-tt-pos="top">
-				Tooltip At Top
+		<div class="container">
+			<button data-tt="This is a tooltip">Bottom</button>
+			<button data-tt="This is a tooltip" data-tt-pos="top">Top</button>
+			<button data-tt="This is a tooltip" data-tt-pos="left">Left</button>
+			<button data-tt="This is a tooltip" data-tt-pos="right">
+				Right
 			</button>
+
 			<button data-tt="This is a tooltip" data-tt-open>
 				Always open
 			</button>
