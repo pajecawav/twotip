@@ -3,20 +3,21 @@
 	--_tt-fg: white;
 	--_tt-padding: 0.3em;
 	--_tt-radius: 0.2em;
+	--_tt-offet: 8px;
 	--_tt-delay: 0.2s;
 	--_tt-duration: 0.15s;
 }
 
-.twotip {
+[data-tt] {
 	position: relative;
 	--_scale: 0;
 }
 
-.twotip[aria-label]::after {
-	content: attr(aria-label);
+[data-tt]::after {
+	content: attr(data-tt);
 
 	position: absolute;
-	top: calc(100% + 8px);
+	top: calc(100% + var(--_tt-offet));
 	left: 50%;
 
 	transform-origin: top;
@@ -32,13 +33,14 @@
 	border-radius: var(--_tt-radius);
 }
 
-.twotip[aria-label]:hover::after {
+[data-tt]:hover::after,
+[data-tt-open] {
 	--_scale: 1;
 	transition-delay: var(--_tt-delay);
 	transition-duration: var(--_tt-duration);
 }
 
-.twotip[aria-label]:focus-visible::after {
+[data-tt]:focus-visible::after {
 	--_scale: 1;
 	transition-delay: 0s;
 }
