@@ -1,0 +1,12 @@
+{
+	"name": "twotip",
+	"version": "1.0.0",
+	"scripts": {
+		"build": "csso twotip.css --output twotip.min.css",
+		"size": "gzip-size twotip.min.css"
+	},
+	"devDependencies": {
+		"csso-cli": "^3.0.0",
+		"gzip-size-cli": "^5.1.0"
+	}
+}

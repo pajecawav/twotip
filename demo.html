@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="../twotip.css" />
+
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			body {
+				height: 100vh;
+				width: 100vw;
+				display: grid;
+				place-items: center;
+			}
+
+			button {
+				font-size: 50px;
+				padding: 0.2em;
+				border-radius: 0.2em;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<button aria-label="This is a tooltip" class="twotip">
+				With Tooltip
+			</button>
+			<button class="twotip">Without Label</button>
+		</div>
+	</body>
+</html>

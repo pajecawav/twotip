@@ -1,0 +1,44 @@
+:root {
+	--_tt-bg: #333;
+	--_tt-fg: white;
+	--_tt-padding: 0.3em;
+	--_tt-radius: 0.2em;
+	--_tt-delay: 0.2s;
+	--_tt-duration: 0.15s;
+}
+
+.twotip {
+	position: relative;
+	--_scale: 0;
+}
+
+.twotip[aria-label]::after {
+	content: attr(aria-label);
+
+	position: absolute;
+	top: calc(100% + 8px);
+	left: 50%;
+
+	transform-origin: top;
+	transform: translateX(-50%) scale(var(--_scale, 1));
+
+	transition: transform;
+	transition-delay: 0s;
+
+	background: var(--_tt-bg);
+	color: var(--_tt-fg);
+	width: max-content;
+	padding: var(--_tt-padding);
+	border-radius: var(--_tt-radius);
+}
+
+.twotip[aria-label]:hover::after {
+	--_scale: 1;
+	transition-delay: var(--_tt-delay);
+	transition-duration: var(--_tt-duration);
+}
+
+.twotip[aria-label]:focus-visible::after {
+	--_scale: 1;
+	transition-delay: 0s;
+}
