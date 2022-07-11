@@ -3,6 +3,7 @@
 	"version": "1.0.0",
 	"scripts": {
 		"build": "csso twotip.css --output twotip.min.css",
+		"vercel-build": "mkdir public && cp index.html twotip.css public/",
 		"size": "gzip-size twotip.min.css"
 	},
 	"devDependencies": {
