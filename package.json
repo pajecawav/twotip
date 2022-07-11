@@ -1,9 +1,14 @@
 {
 	"name": "twotip",
 	"version": "1.0.0",
+	"files": [
+		"twotip.css",
+		"twotip.min.css"
+	],
 	"scripts": {
 		"build": "csso twotip.css --output twotip.min.css",
 		"vercel-build": "mkdir public && cp index.html twotip.css public/",
+		"prepublish": "pnpm build",
 		"size": "gzip-size twotip.min.css"
 	},
 	"devDependencies": {
