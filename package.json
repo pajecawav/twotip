@@ -5,6 +5,8 @@
 		"twotip.css",
 		"twotip.min.css"
 	],
+	"style": "twotip.css",
+	"main": "twotip.css",
 	"scripts": {
 		"build": "csso twotip.css --output twotip.min.css",
 		"vercel-build": "mkdir public && cp index.html twotip.css public/",
