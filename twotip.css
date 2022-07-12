@@ -8,10 +8,6 @@
 	--tt-duration: 0.15s;
 }
 
-body:has([data-tt]:hover) {
-	background: red;
-}
-
 [data-tt] {
 	position: relative;
 	--_scale: 0.5;
