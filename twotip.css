@@ -3,40 +3,44 @@
 	--tt-fg: white;
 	--tt-padding: 0.3em;
 	--tt-radius: 0.2em;
-	--tt-offet: 8px;
-	--tt-delay: 0.2s;
+	--tt-offset: 4px;
+	--tt-delay: 0.1s;
 	--tt-duration: 0.15s;
+}
+
+body:has([data-tt]:hover) {
+	background: red;
 }
 
 [data-tt] {
 	position: relative;
-	--_scale: 0;
+	--_scale: 0.5;
 }
 
 [data-tt]:not([data-tt-pos]),
 [data-tt-pos="bottom"] {
-	--_top: calc(100% + var(--tt-offet));
+	--_top: calc(100% + var(--tt-offset));
 	--_left: 50%;
 	--_tx: -50%;
 	--_origin: top;
 }
 
 [data-tt-pos="top"] {
-	--_bottom: calc(100% + var(--tt-offet));
+	--_bottom: calc(100% + var(--tt-offset));
 	--_left: 50%;
 	--_tx: -50%;
 	--_origin: bottom;
 }
 
 [data-tt-pos="left"] {
-	--_right: calc(100% + var(--tt-offet));
+	--_right: calc(100% + var(--tt-offset));
 	--_top: 50%;
 	--_ty: -50%;
 	--_origin: right;
 }
 
 [data-tt-pos="right"] {
-	--_left: calc(100% + var(--tt-offet));
+	--_left: calc(100% + var(--tt-offset));
 	--_top: 50%;
 	--_ty: -50%;
 	--_origin: left;
@@ -45,6 +49,13 @@
 [data-tt]::after {
 	content: attr(data-tt);
 
+	background: var(--tt-bg);
+	color: var(--tt-fg);
+	width: max-content;
+	padding: var(--tt-padding);
+	border-radius: var(--tt-radius);
+
+	pointer-events: none;
 	z-index: 10;
 
 	position: absolute;
@@ -53,28 +64,25 @@
 	left: var(--_left, initial);
 	right: var(--_right, initial);
 
+	opacity: 0;
 	transform: translate(var(--_tx, 0px), var(--_ty, 0px))
 		scale(var(--_scale, 1));
 	transform-origin: var(--_origin);
 
-	transition: transform;
+	transition: transform, opacity;
 	transition-delay: 0s;
-
-	background: var(--tt-bg);
-	color: var(--tt-fg);
-	width: max-content;
-	padding: var(--tt-padding);
-	border-radius: var(--tt-radius);
 }
 
 [data-tt]:hover::after,
-[data-tt-open] {
+[data-tt-open]::after {
 	--_scale: 1;
+	opacity: 1;
 	transition-delay: var(--tt-delay);
 	transition-duration: var(--tt-duration);
 }
 
 [data-tt]:focus-visible::after {
 	--_scale: 1;
+	opacity: 1;
 	transition-delay: 0s;
 }

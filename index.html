@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<link rel="stylesheet" href="./twotip.css" />
+		<title>twotip</title>
 
 		<style>
 			* {
@@ -20,7 +21,7 @@
 			.container {
 				display: flex;
 				flex-direction: column;
-				gap: 2rem;
+				gap: 10px;
 			}
 
 			button {
@@ -30,9 +31,14 @@
 			}
 		</style>
 	</head>
+
 	<body>
 		<div class="container">
-			<button data-tt="This is a tooltip">Bottom</button>
+			<button data-tt="This is a tooltip">Default</button>
+
+			<button data-tt="This is a tooltip" data-tt-pos="bottom">
+				Bottom
+			</button>
 			<button data-tt="This is a tooltip" data-tt-pos="top">Top</button>
 			<button data-tt="This is a tooltip" data-tt-pos="left">Left</button>
 			<button data-tt="This is a tooltip" data-tt-pos="right">
