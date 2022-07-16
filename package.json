@@ -1,6 +1,16 @@
 {
 	"name": "twotip",
 	"version": "1.0.1",
+	"description": "Minimalistic CSS tooltip library",
+	"homepage": "https://github.com/pajecawav/twotip",
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/pajecawav/twotip.git"
+	},
+	"keywords": [
+		"css",
+		"tooltip"
+	],
 	"files": [
 		"twotip.css",
 		"twotip.min.css"
