@@ -55,10 +55,10 @@
 	z-index: 10;
 
 	position: absolute;
-	top: var(--_top, initial);
-	bottom: var(--_bottom, initial);
-	left: var(--_left, initial);
-	right: var(--_right, initial);
+	top: var(--_top);
+	bottom: var(--_bottom);
+	left: var(--_left);
+	right: var(--_right);
 
 	opacity: 0;
 	transform: translate(var(--_tx, 0px), var(--_ty, 0px))
