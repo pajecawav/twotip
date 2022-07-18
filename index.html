@@ -12,20 +12,29 @@
 			}
 
 			body {
-				min-height: 100vh;
 				display: grid;
 				place-items: center;
-				padding: 8px;
+				margin: 16px;
 			}
 
 			.container {
 				display: flex;
 				flex-direction: column;
+				gap: 40px;
+			}
+
+			section {
+				display: flex;
+				flex-direction: column;
 				gap: 10px;
 			}
 
+			h1 {
+				text-align: center;
+			}
+
 			button {
-				font-size: 50px;
+				font-size: inherit;
 				padding: 0.2em;
 				border-radius: 0.2em;
 			}
@@ -34,20 +43,69 @@
 
 	<body>
 		<div class="container">
-			<button data-tt="This is a tooltip">Default</button>
+			<section>
+				<h1>Default</h1>
+				<button data-tt="This is a tooltip">Default</button>
+			</section>
 
-			<button data-tt="This is a tooltip" data-tt-pos="bottom">
-				Bottom
-			</button>
-			<button data-tt="This is a tooltip" data-tt-pos="top">Top</button>
-			<button data-tt="This is a tooltip" data-tt-pos="left">Left</button>
-			<button data-tt="This is a tooltip" data-tt-pos="right">
-				Right
-			</button>
+			<section>
+				<h1>Always Open</h1>
+				<button
+					data-tt="This is a tooltip"
+					data-tt-open
+					data-tt-pos="right"
+				>
+					Always open
+				</button>
+			</section>
 
-			<button data-tt="This is a tooltip" data-tt-open>
-				Always open
-			</button>
+			<section>
+				<h1>Position</h1>
+				<button data-tt="This is a tooltip" data-tt-pos="bottom">
+					Bottom
+				</button>
+				<button data-tt="This is a tooltip" data-tt-pos="top">
+					Top
+				</button>
+				<button data-tt="This is a tooltip" data-tt-pos="left">
+					Left
+				</button>
+				<button data-tt="This is a tooltip" data-tt-pos="right">
+					Right
+				</button>
+			</section>
+
+			<section>
+				<h1>Size</h1>
+				<button
+					data-tt="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+					data-tt-size="small"
+					data-tt-pos="top"
+				>
+					Small
+				</button>
+				<button
+					data-tt="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+					data-tt-size="medium"
+					data-tt-pos="top"
+				>
+					Medium
+				</button>
+				<button
+					data-tt="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+					data-tt-size="large"
+					data-tt-pos="top"
+				>
+					Large
+				</button>
+				<button
+					data-tt="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+					data-tt-size="max"
+					data-tt-pos="top"
+				>
+					Max
+				</button>
+			</section>
 		</div>
 	</body>
 </html>

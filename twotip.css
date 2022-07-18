@@ -11,6 +11,7 @@
 [data-tt] {
 	position: relative;
 	--_scale: 0.5;
+	--_width: max-content;
 }
 
 [data-tt]:not([data-tt-pos]),
@@ -42,12 +43,28 @@
 	--_origin: left;
 }
 
+[data-tt-size="small"] {
+	--_width: 80px;
+}
+
+[data-tt-size="medium"] {
+	--_width: 160px;
+}
+
+[data-tt-size="large"] {
+	--_width: 240px;
+}
+
+[data-tt-size="max"] {
+	--_width: max-content;
+}
+
 [data-tt]::after {
 	content: attr(data-tt);
 
 	background: var(--tt-bg);
 	color: var(--tt-fg);
-	width: max-content;
+	width: var(--_width);
 	padding: var(--tt-padding);
 	border-radius: var(--tt-radius);
 

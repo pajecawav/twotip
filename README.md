@@ -1,4 +1,4 @@
-# twotip
+# twotip [![npm](https://img.shields.io/npm/v/twotip)](https://www.npmjs.com/package/twotip) ![gzipped size](https://img.shields.io/bundlephobia/minzip/twotip?label=gzipped)
 
 `twotip` is a minimal CSS tooltip library.
 
@@ -59,6 +59,16 @@ example:
 
 ```html
 <button data-tt="This is a tooltip" data-tt-pos="right">Click me!</button>
+```
+
+### Tooltip Sizes
+
+You can change tooltip size by adding a `data-tt-size` attribite with one of
+the following values: `small`, `medium`, `large` or `max` (default, tooltip
+stretches to fit the text). For example:
+
+```html
+<button data-tt="This is a tooltip" data-tt-size="small">Click me!</button>
 ```
 
 ### Static Tooltip

@@ -13,7 +13,8 @@
 	],
 	"files": [
 		"twotip.css",
-		"twotip.min.css"
+		"twotip.min.css",
+		"README.md"
 	],
 	"style": "twotip.css",
 	"main": "twotip.css",
