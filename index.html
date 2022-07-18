@@ -33,9 +33,12 @@
 				text-align: center;
 			}
 
-			button {
-				font-size: inherit;
+			a {
+				text-align: center;
+				text-decoration: none;
+				color: inherit;
 				padding: 0.2em;
+				border: 1px dashed black;
 				border-radius: 0.2em;
 			}
 		</style>
@@ -45,66 +48,72 @@
 		<div class="container">
 			<section>
 				<h1>Default</h1>
-				<button data-tt="This is a tooltip">Default</button>
+				<a href="#" data-tt="This is a tooltip">Default</a>
 			</section>
 
 			<section>
 				<h1>Always Open</h1>
-				<button
+				<a
+					href="#"
 					data-tt="This is a tooltip"
 					data-tt-open
 					data-tt-pos="right"
 				>
 					Always open
-				</button>
+				</a>
 			</section>
 
 			<section>
 				<h1>Position</h1>
-				<button data-tt="This is a tooltip" data-tt-pos="bottom">
+				<a href="#" data-tt="This is a tooltip" data-tt-pos="bottom">
 					Bottom
-				</button>
-				<button data-tt="This is a tooltip" data-tt-pos="top">
+				</a>
+				<a href="#" data-tt="This is a tooltip" data-tt-pos="top">
 					Top
-				</button>
-				<button data-tt="This is a tooltip" data-tt-pos="left">
+				</a>
+				<a href="#" data-tt="This is a tooltip" data-tt-pos="left">
 					Left
-				</button>
-				<button data-tt="This is a tooltip" data-tt-pos="right">
+				</a>
+				<a href="#" data-tt="This is a tooltip" data-tt-pos="right">
 					Right
-				</button>
+				</a>
 			</section>
 
 			<section>
 				<h1>Size</h1>
-				<button
+				<a
+					href="#"
 					data-tt="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
 					data-tt-size="small"
 					data-tt-pos="top"
 				>
 					Small
-				</button>
-				<button
+				</a>
+				<a
+					href="#"
 					data-tt="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
 					data-tt-size="medium"
 					data-tt-pos="top"
 				>
 					Medium
-				</button>
-				<button
+				</a>
+				<a
+					href="#"
 					data-tt="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
 					data-tt-size="large"
 					data-tt-pos="top"
 				>
 					Large
-				</button>
-				<button
+				</a>
+				<a
+					href="#"
+					style="text-decoration: none"
 					data-tt="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
 					data-tt-size="max"
 					data-tt-pos="top"
 				>
 					Max
-				</button>
+				</a>
 			</section>
 		</div>
 	</body>
