@@ -17,10 +17,28 @@
 				margin: 16px;
 			}
 
+			#playground {
+				width: 500px;
+				display: grid;
+				grid-template-columns: 3fr 1fr;
+				gap: 10px;
+			}
+
+			#playground-code {
+				resize: vertical;
+				padding: 4px;
+			}
+
+			#playground-preview {
+				display: grid;
+				place-items: center;
+			}
+
 			.container {
 				display: flex;
 				flex-direction: column;
 				gap: 40px;
+				align-items: center;
 			}
 
 			section {
@@ -46,6 +64,31 @@
 
 	<body>
 		<div class="container">
+			<section>
+				<h1>Playground</h1>
+				<div id="playground">
+					<!-- prettier-ignore -->
+					<textarea id="playground-code" rows="7">
+<a
+    data-tt="This is a tooltip"
+    data-tt-pos="bottom"
+    data-tt-size="max"
+>
+    Hover me
+</a></textarea>
+
+					<div id="playground-preview">
+						<a
+							data-tt="This is a tooltip"
+							data-tt-pos="bottom"
+							data-tt-size="max"
+						>
+							Hover me
+						</a>
+					</div>
+				</div>
+			</section>
+
 			<section>
 				<h1>Default</h1>
 				<a href="#" data-tt="This is a tooltip">Default</a>
@@ -116,5 +159,15 @@
 				</a>
 			</section>
 		</div>
+
+		<script>
+			const playgroundCode = document.getElementById("playground-code");
+			const playgroundPreview =
+				document.getElementById("playground-preview");
+
+			playgroundCode.addEventListener("input", e => {
+				playgroundPreview.innerHTML = e.target.value;
+			});
+		</script>
 	</body>
 </html>
